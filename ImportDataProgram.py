@@ -141,20 +141,26 @@ def storeData(file_path, table_name, cursor):
             ret += 1
         except mysql.connector.errors.ProgrammingError as e:
             print e
-            # return -1
+        except mysql.connector.errors.DatabaseError as e:
+            with open('err_log.txt','a+') as err:
+                err.write('[ %s ]文件中第[ %d ]行数据包含特殊字符，插入数据库失败。\n'%(file_path, ret+3))
     return ret
 
 
 
 if __name__ == "__main__":
-    if len(sys.argv)<5:
-        print "Missing Parameters"
-        sys.exit()
-    elif len(sys.argv)>5:
-        print "Too Many Parameters"
-        sys.exit()
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    datapath = sys.argv[4]
+    # if len(sys.argv)<5:
+    #     print "Missing Parameters"
+    #     sys.exit()
+    # elif len(sys.argv)>5:
+    #     print "Too Many Parameters"
+    #     sys.exit()
+    # username = sys.argv[1] posts_from_2013_12_20
+    # password = sys.argv[2]
+    # database = sys.argv[3]
+    # datapath = sys.argv[4]
+    username = 'root'
+    password = 'root'
+    database = 'test3'
+    datapath = 'I:\PyProj\importData\data_path'
     importDataHelper(username, password, database, datapath)
