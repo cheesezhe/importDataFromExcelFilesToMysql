@@ -100,7 +100,7 @@ def storeData(file_path, table_name, cursor):
     sql = 'create table '\
           +table_name+' (' \
           +'id int NOT NULL AUTO_INCREMENT PRIMARY KEY, ' \
-          +'at_company varchar(10) DEFAULT \'821\', '
+          +'firm varchar(10) DEFAULT \'821\', '
 
     for i in range(0, ncols):
         sql = sql + col_names[i] + ' varchar(150)'
