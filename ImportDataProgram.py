@@ -99,8 +99,7 @@ def storeData(file_path, table_name, cursor):
     '''create table in mysql'''
     sql = 'create table '\
           +table_name+' (' \
-          +'id int NOT NULL AUTO_INCREMENT PRIMARY KEY, ' \
-          +'firm varchar(10) DEFAULT \'123\', '
+          +'id int NOT NULL AUTO_INCREMENT PRIMARY KEY, '
 
     for i in range(0, ncols):
         sql = sql + col_names[i] + ' varchar(150)'

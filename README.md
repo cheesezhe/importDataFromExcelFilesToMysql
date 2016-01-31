@@ -6,7 +6,7 @@ Each of the Excel contains one table and we want to import and store every one o
 
 All columns of data are needed.
 
-The first row “Monitor: 123 ...” will be removed and one column named “firm” will be added and the variable value is 123.
+The first row will be removed.
 ##Tips
 You should modify the code for your own requirements.
 
